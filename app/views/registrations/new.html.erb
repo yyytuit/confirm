@@ -1,0 +1,23 @@
+<%= form_with( model: @registration, local: true, url: {action: :confirm}) do |f| %>
+    <h2>登録手続き</h2>
+    <% if @registration.errors.any? %>
+      <div id="error_explanation">
+        <%= @registration.errors.count %>件のエラーがあります。
+        <ul>
+          <% @registration.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= link_to '登録一覧へ', root_path %>
+    <%= f.submit '確認する' %>
+  </div>
+<% end %>
+

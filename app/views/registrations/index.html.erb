@@ -1,0 +1,19 @@
+<h2>登録一覧</h2>
+<%= link_to '登録作成', new_registration_path %>
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>登録名</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registrations.each do |r| %>
+      <tr>
+        <td><%= r.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

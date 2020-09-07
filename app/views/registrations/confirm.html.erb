@@ -1,0 +1,13 @@
+<%= form_with( model: @registration, local: true, url: {action: :create}) do |f| %>
+  <h2>登録確認</h2>
+  <%= hidden_field_tag :finish, true %>
+  <%= f.hidden_field :name %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= @registration.name %>
+  </div>
+  <div class="actions">
+    <%= f.submit '登録作成へ戻る', name: 'back' %>
+    <%= f.submit '完了する' %>
+  </div>
+<% end %>
